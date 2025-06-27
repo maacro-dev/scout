@@ -92,5 +92,6 @@ scout-android-application-compose = { id = "scout.android.application.compose" }
 scout-android-library = { id = "scout.android.library" }
 scout-android-library-compose = { id = "scout.android.library.compose" }
 scout-android-room = { id = "scout.android.room" }
+scout-android-feature = { id = "scout.android.feature" }
 scout-hilt = { id = "scout.hilt" }
 scout-jvm-library = { id = "scout.jvm.library" }

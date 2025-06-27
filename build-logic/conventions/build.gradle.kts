@@ -44,6 +44,10 @@ gradlePlugin {
             id = "scout.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("androidFeature") {
+            id = "scout.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("androidRoom") {
             id = "scout.android.room"
             implementationClass = "AndroidRoomConventionPlugin"

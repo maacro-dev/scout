@@ -8,6 +8,7 @@ compose-bom = "2025.06.01"
 compose-compiler = "1.5.15"
 compose-foundation = "1.8.3"
 core-ktx = "1.16.0"
+core-splashscreen = "1.0.1"
 coroutines = "1.10.2"
 datastore = "1.1.7"
 kotlin = "2.2.0"
@@ -44,6 +45,7 @@ androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
 androidx-dataStore = { group = "androidx.datastore", name = "datastore", version.ref = "datastore" }
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore-core", version.ref = "datastore" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }

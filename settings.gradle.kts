@@ -1,4 +1,5 @@
 pluginManagement {
+	includeBuild("build-logic")
 	repositories {
 		google {
 			content {
@@ -17,7 +18,19 @@ dependencyResolutionManagement {
 		google()
 		mavenCentral()
 	}
+
 }
 
-rootProject.name = "Scout"
+rootProject.name = "scout"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:common")
+include(":sync")
+include(":core:designsystem")
+include(":core:ui")
+include(":core:data")
+include(":core:database")
+include(":core:datastore")
+include(":core:model")
+include(":core:network")

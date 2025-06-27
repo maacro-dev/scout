@@ -1,0 +1,20 @@
+[versions]
+agp_version = "8.11.0"
+interpolator_version = "1.0.0"
+
+[libraries]
+gradle = { module = "com.android.tools.build:gradle", version.ref = "agp_version" }
+
+splashscreen = "androidx.core:core-splashscreen:1.0.1"
+viewpager = "androidx.viewpager:viewpager:1.1.0"
+
+lifecycle-common = { module = "androidx.lifecycle:lifecycle-common", version.ref = "lifecycle_version" }
+lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle_version" }
+lifecycle-runtimektx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle_version" }
+
+workmanager = "androidx.work:work-runtime:2.10.2"
+
+interpolator = { group = "androidx.interpolator", name = "interpolator", version.ref = "interpolator_version" }
+
+[bundles]
+lifecycle = ["lifecycle-common", "lifecycle-process", "lifecycle-runtimektx"]

@@ -1,26 +1,37 @@
 [versions]
 activity-compose = "1.10.1"
-agp = "8.10.1"
+androidDesugarJdkLibs = "2.1.5"
+agp = "8.11.0"
+androidGradlePlugin = "8.11.0"
+androidTools = "31.11.0"
 compose-bom = "2025.06.01"
+compose-compiler = "1.5.15"
 core-ktx = "1.16.0"
-coroutines = "1.7.3"
+coroutines = "1.10.2"
 datastore = "1.1.7"
-kotlin = "2.1.21"
+kotlin = "2.2.0"
 lifecycle = "2.9.1"
 hilt = "2.56.2"
 hilt-navigation-compose = "1.2.0"
 hilt-ext = "1.2.0"
-ksp = "2.1.21-2.0.1"
+ksp = "2.2.0-2.0.2"
 metrics = "1.0.0-beta02"
 navigation-compose = "2.9.0"
-serialization-json = "1.8.0"
+serialization-json = "1.8.1"
 room = "2.7.2"
 work = "2.10.2"
-
+appcompat = "1.7.1"
+material = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompatVersion = "1.7.1"
+materialVersion = "1.12.0"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+androidx-compose-compiler = { group = "androidx.compose.compiler", name = "compiler", version.ref = "compose-compiler" }
 androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-material3-navigationSuite = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite" }
@@ -44,6 +55,7 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
 hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hilt-ext" }
 hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hilt-ext" }
 
@@ -51,10 +63,34 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
+material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+
+scout-android-application = { id = "scout.android.application" }
+scout-android-application-compose = { id = "scout.android.application.compose" }
+scout-android-library = { id = "scout.android.library" }
+scout-android-library-compose = { id = "scout.android.library.compose" }
+scout-android-room = { id = "scout.android.room" }
+scout-hilt = { id = "scout.hilt" }
+scout-jvm-library = { id = "scout.jvm.library" }

@@ -32,17 +32,21 @@ android {
 
 dependencies {
 
+	implementation(projects.feature.auth)
+
+	implementation(projects.core.common)
+	implementation(projects.core.ui)
+	implementation(projects.core.designsystem)
+	implementation(projects.core.data)
+	implementation(projects.core.model)
 	implementation(projects.core.designsystem)
 
+	implementation(projects.sync)
+
 	implementation(libs.androidx.core.ktx)
+	implementation(libs.androidx.core.splashscreen)
 	implementation(libs.androidx.activity.compose)
 
-	implementation(libs.androidx.compose.material.iconsExtended)
-	implementation(libs.androidx.compose.material3)
-	implementation(libs.androidx.compose.material3.navigationSuite)
-	implementation(libs.androidx.compose.runtime)
-	implementation(libs.androidx.compose.ui)
-	implementation(libs.androidx.compose.ui.graphics)
 
 	implementation(libs.androidx.dataStore)
 	implementation(libs.androidx.dataStore.core)

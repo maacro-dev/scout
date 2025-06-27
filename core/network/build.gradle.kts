@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.maacro.scout.network"
+    namespace = "com.maacro.scout.core.network"
     buildFeatures {
         buildConfig = true
     }

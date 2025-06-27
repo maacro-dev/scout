@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.maacro.scout.database"
+    namespace = "com.maacro.scout.core.database"
 }
 
 dependencies {

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.maacro.scout.datastore"
+    namespace = "com.maacro.scout.core.datastore"
 
     defaultConfig {
         consumerProguardFiles("consumer-proguard-rules.pro")

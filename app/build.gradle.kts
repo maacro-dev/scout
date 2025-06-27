@@ -1,59 +1,49 @@
+import com.maacro.scout.ScoutBuildType
+
 plugins {
-	alias(libs.plugins.android.application)
-	alias(libs.plugins.kotlin.android)
-	alias(libs.plugins.kotlin.compose)
-	alias(libs.plugins.hilt)
+	alias(libs.plugins.scout.android.application)
+	alias(libs.plugins.scout.android.application.compose)
+	alias(libs.plugins.scout.hilt)
 	alias(libs.plugins.kotlin.serialization)
-	alias(libs.plugins.ksp)
 }
 
 android {
 	namespace = "com.maacro.scout"
-	compileSdk = 35
 
 	defaultConfig {
 		applicationId = "com.maacro.scout"
-		minSdk = 26
-		targetSdk = 36
 		versionCode = 1
 		versionName = "0.1.0"
-
 	}
+
 
 	buildTypes {
 		debug {
-			isMinifyEnabled = false
+			applicationIdSuffix = ScoutBuildType.DEBUG.applicationIdSuffix
 		}
 		release {
-			isMinifyEnabled = false
-			proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+			isMinifyEnabled = true
+			applicationIdSuffix = ScoutBuildType.RELEASE.applicationIdSuffix
+			proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+			signingConfig = signingConfigs.named("debug").get()
 		}
-	}
-	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_17
-		targetCompatibility = JavaVersion.VERSION_17
-	}
-	kotlinOptions {
-		jvmTarget = "17"
-	}
-	buildFeatures {
-		compose = true
-		buildConfig = true
 	}
 }
 
 dependencies {
 
-	implementation(platform(libs.androidx.compose.bom))
+	implementation(projects.core.designsystem)
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.activity.compose)
-	implementation(libs.androidx.compose.ui)
-	implementation(libs.androidx.compose.ui.graphics)
+
 	implementation(libs.androidx.compose.material.iconsExtended)
 	implementation(libs.androidx.compose.material3)
 	implementation(libs.androidx.compose.material3.navigationSuite)
 	implementation(libs.androidx.compose.runtime)
+	implementation(libs.androidx.compose.ui)
+	implementation(libs.androidx.compose.ui.graphics)
+
 	implementation(libs.androidx.dataStore)
 	implementation(libs.androidx.dataStore.core)
 	implementation(libs.androidx.hilt.navigation.compose)

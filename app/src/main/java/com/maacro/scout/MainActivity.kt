@@ -36,10 +36,9 @@ class MainActivity : ComponentActivity() {
 		lifecycleScope.launch {
 			repeatOnLifecycle(Lifecycle.State.STARTED) {
 				combine(
-					systemNightModeFlow(),     // Flow<Boolean>
-					viewModel.uiState          // Flow<UiState>
+					systemNightModeFlow(),
+					viewModel.uiState
 				) { systemDark, uiState ->
-					// compute whether we should use dark theme
 					uiState.shouldUseDarkTheme(systemDark)
 				}
 					.distinctUntilChanged()
@@ -59,15 +58,13 @@ class MainActivity : ComponentActivity() {
 			}
 		}
 
-        // Keep the splash screen on-screen until the UI state is loaded. This condition is
-        // evaluated each time the app needs to be redrawn so it should be fast to avoid blocking
-        // the UI.
-
         splashScreen.setKeepOnScreenCondition { viewModel.uiState.value.shouldKeepSplashScreen() }
 
 		setContent {
 			val appState = rememberScoutAppState()
-			ScoutTheme(dynamicColor = false) {
+			ScoutTheme(
+				darkTheme = darkMode
+			) {
 				ScoutApp(appState = appState)
 			}
 		}

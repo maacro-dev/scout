@@ -37,24 +37,13 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun ScoutTheme(
 	darkTheme: Boolean = isSystemInDarkTheme(),
-	dynamicColor: Boolean = true,
 	children: @Composable () -> Unit
 ) {
 
 	val colorScheme = when {
-
-		// Dynamic color is available on Android 12+
-		dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-			val context = LocalContext.current
-			if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-		}
-
 		darkTheme -> DarkColorScheme
 		else -> LightColorScheme
 	}
-
-
-	Log.d("ScoutTheme", "Dark theme? $darkTheme")
 
 	MaterialTheme(
 		colorScheme = colorScheme,
